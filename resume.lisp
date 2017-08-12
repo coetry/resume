@@ -12,3 +12,6 @@
 
 (defun contact-info (info contact)
   (cdr (assoc info contact)))
+
+;; dynamic function naming
+(setf (fdefinition (if (< 0 1) 'mname 'dob)) (lambda () (contact-info ...)))
